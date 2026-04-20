@@ -1,0 +1,39 @@
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-body);
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+  }
+
+  /* Subtle noise grain texture on body */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  ::-webkit-scrollbar        { width: 4px; }
+  ::-webkit-scrollbar-track  { background: var(--color-bg-base); }
+  ::-webkit-scrollbar-thumb  { background: var(--color-bg-border); border-radius: 2px; }
+
+  input, textarea {
+    outline: none;
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
