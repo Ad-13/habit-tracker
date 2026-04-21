@@ -25,6 +25,10 @@
     z-index: 9999;
   }
 
+  #root {
+    @apply min-h-dvh flex flex-col;
+  }
+
   ::-webkit-scrollbar        { width: 4px; }
   ::-webkit-scrollbar-track  { background: var(--color-bg-base); }
   ::-webkit-scrollbar-thumb  { background: var(--color-bg-border); border-radius: 2px; }

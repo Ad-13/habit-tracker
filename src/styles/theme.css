@@ -25,9 +25,9 @@
   --color-text-muted: #4a4e6a;
 
   /* Energy level colours */
-  --color-energy-low: var(--color-neon-red); /* 0–33% */
-  --color-energy-mid: var(--color-neon-amber); /* 34–66% */
-  --color-energy-high: var(--color-neon-cyan); /* 67–99% */
+  --color-energy-low: var(--color-neon-red); /* 0–29% */
+  --color-energy-mid: var(--color-neon-amber); /* 30–59% */
+  --color-energy-high: var(--color-neon-cyan); /* 60–99% */
   --color-energy-full: var(--color-neon-green); /* 100% */
 
   /* Primary accent */
