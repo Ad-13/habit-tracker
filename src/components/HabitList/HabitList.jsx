@@ -1,5 +1,5 @@
 import EmptyList from './EmptyList.jsx'
-import HabitListItem from './HabitListItem.jsx'
+import HabitListItem from './HabitListItem/HabitListItem.jsx'
 
 const HabitList = ({ habits, onIncrement, onDecrement, onDelete }) => {
 

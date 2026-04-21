@@ -1,4 +1,4 @@
-import { getEnergyColour } from "../helpers/utils"
+import { getEnergyColour } from "../../../helpers/utils"
 
 const BatteryBar = ({ count, goal }) => {
   const ratio = goal > 0 ? Math.min(count / goal, 1) : 0
@@ -40,15 +40,12 @@ const BatteryBar = ({ count, goal }) => {
         ))}
       </div>
       {/* Percentage label */}
-      <div className="flex items-center justify-between">
+      <div className="flex">
         <span
-          className="text-[10px] font-display tracking-wider"
+          className="text-sm font-display tracking-wider"
           style={{ color: colour }}
         >
           {ratio >= 1 ? '⚡ CHARGED' : `${percentage}%`}
-        </span>
-        <span className="text-[10px] text-text-muted font-sans">
-          {count}/{goal}
         </span>
       </div>
     </div>
