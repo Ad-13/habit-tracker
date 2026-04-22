@@ -3,7 +3,7 @@ import HabitListItem from './HabitListItem/HabitListItem.jsx'
 
 const HabitList = ({ habits, onIncrement, onDecrement, onDelete }) => {
 
-  if (habits.length === 0) return <EmptyList />
+  if (!habits.length) return <EmptyList />
 
   return (
     <ul className="flex flex-col gap-4" role="list" aria-label="Your habits">

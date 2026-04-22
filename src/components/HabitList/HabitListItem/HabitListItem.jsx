@@ -25,7 +25,6 @@ const HabitListItem = ({ habit, index, onIncrement, onDecrement, onDelete }) => 
         animationDelay: `${index * 60}ms`,
       }}
     >
-      {/* Coloured top-edge accent line — opacity driven by progress */}
       <div
         className="absolute top-0 left-0 right-0 h-px transition-all duration-500"
         style={{ backgroundColor: colour, opacity: ratio > 0 ? 0.8 : 0.2 }}
@@ -33,7 +32,6 @@ const HabitListItem = ({ habit, index, onIncrement, onDecrement, onDelete }) => 
 
       <div className="p-4 flex flex-col gap-3">
 
-        {/* ── Row 1: emoji · name · delete ── */}
         <div className="flex items-center gap-3">
           <span className="text-2xl select-none" aria-hidden>
             {emoji}

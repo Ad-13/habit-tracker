@@ -4,7 +4,6 @@ const BatteryBar = ({ count, goal }) => {
   const ratio = goal > 0 ? Math.min(count / goal, 1) : 0
   const colour = getEnergyColour(ratio)
   const percentage = Math.round(ratio * 100)
-  // Clamp segments between 4 and 10 for visual readability
   const segments = Math.min(Math.max(goal, 4), 10)
 
   return (
@@ -19,7 +18,6 @@ const BatteryBar = ({ count, goal }) => {
         aria-valuemax={goal}
         aria-label={`${count} of ${goal}`}
       >
-        {/* Continuous fill behind segments */}
         <div
           className={`absolute inset-y-0 left-0 transition-all duration-500
                       ${ratio >= 1 ? 'battery-fill battery-complete' : ''}`}
@@ -30,7 +28,6 @@ const BatteryBar = ({ count, goal }) => {
             transition: 'width 0.5s ease, background-color 0.5s ease',
           }}
         />
-        {/* Segment dividers overlay */}
         {Array.from({ length: segments - 1 }).map((_, i) => (
           <div
             key={i}
@@ -39,7 +36,6 @@ const BatteryBar = ({ count, goal }) => {
           />
         ))}
       </div>
-      {/* Percentage label */}
       <div className="flex">
         <span
           className="text-sm font-display tracking-wider"

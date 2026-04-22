@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react"
+
 import { loadHabits, saveHabits } from "../helpers/storage"
 import { DEFAULT_HABITS } from "../helpers/constants"
+
+import ProgressActions from "./ProgressActions/ProgressActions"
+import HabitList from "./HabitList/HabitList"
+import HabitForm from "./HabitForm"
 
 const Main = () => {
   const [habits, setHabits] = useState(() => {
     const stored = loadHabits()
     return stored.length > 0 ? stored : DEFAULT_HABITS
   })
+  const completedCount = habits.filter(h => h.count >= h.goal).length
+  const totalCount = habits.length
 
   const handleAddHabit = newHabit => setHabits(prev => [
     ...prev,
@@ -32,6 +39,7 @@ const Main = () => {
     )
 
   const handleDelete = id => setHabits(prev => prev.filter(h => h.id !== id))
+  const handleResetAll = () => setHabits(prev => prev.map(h => ({ ...h, count: 0 })))
 
   useEffect(() => {
     saveHabits(habits)
@@ -39,6 +47,11 @@ const Main = () => {
 
   return (
     <main className="flex-1 max-w-3xl w-full mx-auto px-4 md:px-6 py-8 flex flex-col gap-8">
+      <ProgressActions
+        completed={completedCount}
+        total={totalCount}
+        onResetAll={handleResetAll}
+      />
 
       <HabitList
         habits={habits}
@@ -46,7 +59,6 @@ const Main = () => {
         onDecrement={handleDecrement}
         onDelete={handleDelete}
       />
-
 
       <HabitForm onAdd={handleAddHabit} />
     </main>

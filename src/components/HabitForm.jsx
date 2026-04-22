@@ -19,7 +19,6 @@ export default function HabitForm({ onAdd }) {
 
   return (
     <section>
-      {/* Toggle button */}
       {!open && (
         <button
           onClick={() => setOpen(true)}
@@ -36,7 +35,6 @@ export default function HabitForm({ onAdd }) {
         </button>
       )}
 
-      {/* Form */}
       {open && (
         <form
           onSubmit={handleSubmit}
@@ -51,10 +49,8 @@ export default function HabitForm({ onAdd }) {
             New habit
           </p>
 
-          {/* Emoji picker + Name */}
           <div className="flex gap-3">
 
-            {/* Emoji select */}
             <select
               value={emoji}
               onChange={e => setEmoji(e.target.value)}
@@ -71,7 +67,6 @@ export default function HabitForm({ onAdd }) {
               ))}
             </select>
 
-            {/* Name input */}
             <input
               type="text"
               value={name}
@@ -91,7 +86,6 @@ export default function HabitForm({ onAdd }) {
             />
           </div>
 
-          {/* Goal */}
           <div className="flex items-center gap-4">
             <label className="text-text-muted text-xs
                               font-sans uppercase tracking-wider shrink-0">
@@ -116,7 +110,6 @@ export default function HabitForm({ onAdd }) {
             </span>
           </div>
 
-          {/* Actions */}
           <div className="flex gap-3 justify-end pt-1">
             <button
               type="button"
