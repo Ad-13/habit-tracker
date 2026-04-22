@@ -5,9 +5,10 @@
   --color-void-800: #12142a;
   --color-void-700: #1a1d3a;
   --color-void-600: #252850;
+  --color-void-500: #323668;
 
   --color-neon-cyan: #00f5ff;
-  --color-neon-green: #39ff14;
+  --color-neon-green: #2fd510;
   --color-neon-amber: #ffb300;
   --color-neon-red: #ff3864;
   --color-neon-purple: #bf5af2;
@@ -17,7 +18,7 @@
   --color-bg-base: var(--color-void-950);
   --color-bg-card: var(--color-void-900);
   --color-bg-raised: var(--color-void-800);
-  --color-bg-border: var(--color-void-700);
+  --color-bg-border: var(--color-void-500);
 
   /* text-* */
   --color-text-primary: #e8eaf0;

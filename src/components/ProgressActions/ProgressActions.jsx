@@ -54,12 +54,14 @@ const ProgressActions = ({ completed, total, onResetAll }) => {
           ? false
           : !completed && !total}
         className="shrink-0 px-4 py-2 rounded-button
-                   border border-(--color-bg-border)
-                   text-text-muted text-xs
-                   font-sans font-semibold tracking-wider uppercase
+                   bg-(--color-neon-red)/10
+                   border border-(--color-neon-red)/30
+                   text-(--color-neon-red)/70
+                   text-xs font-sans font-semibold tracking-wider uppercase
+                   hover:bg-(--color-neon-red)/25
                    hover:border-(--color-neon-red)/60
                    hover:text-(--color-neon-red)
-                   transition-colors duration-200
+                   transition-all duration-200
                    disabled:opacity-30 disabled:cursor-not-allowed"
         title="Reset all habit counters to zero"
       >

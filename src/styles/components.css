@@ -1,18 +1,24 @@
 @layer components {
-
   /* Animated neon glow on battery fill when complete */
   .battery-complete .battery-fill {
     animation: pulse-glow 1.5s ease-in-out infinite;
   }
 
   @keyframes pulse-glow {
-    0%, 100% { opacity: 1; box-shadow: 0 0 12px currentColor; }
-    50%       { opacity: 0.8; box-shadow: 0 0 28px currentColor; }
+    0%,
+    100% {
+      opacity: 1;
+      box-shadow: 0 0 12px currentColor;
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 28px currentColor;
+    }
   }
 
   /* Scanline overlay for retro-tech feel */
   .scanlines::after {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: repeating-linear-gradient(
@@ -32,11 +38,23 @@
   }
 
   @keyframes flicker {
-    0%, 95%, 100%  { opacity: 1; }
-    96%            { opacity: 0.6; }
-    97%            { opacity: 1; }
-    98%            { opacity: 0.4; }
-    99%            { opacity: 1; }
+    0%,
+    95%,
+    100% {
+      opacity: 1;
+    }
+    96% {
+      opacity: 0.6;
+    }
+    97% {
+      opacity: 1;
+    }
+    98% {
+      opacity: 0.4;
+    }
+    99% {
+      opacity: 1;
+    }
   }
 
   /* Card entrance animation */
@@ -45,13 +63,31 @@
   }
 
   @keyframes card-in {
-    from { opacity: 0; transform: translateY(16px) scale(0.97); }
-    to   { opacity: 1; transform: translateY(0)    scale(1); }
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   }
 
-  .counter-btn:not(:disabled):hover {
-    border-color:     color-mix(in srgb, var(--hover-colour) 60%, transparent);
-    color:            var(--hover-colour);
-    background-color: color-mix(in srgb, var(--hover-colour) 8%, transparent);
+  .counter-btn {
+    border-color: color-mix(in srgb, var(--btn-colour) 25%, transparent);
+    color: color-mix(in srgb, var(--btn-colour) 70%, transparent);
+    background-color: color-mix(in srgb, var(--btn-colour) 10%, transparent);
+  }
+
+  .counter-btn:hover {
+    border-color: color-mix(in srgb, var(--btn-colour) 60%, transparent);
+    color: var(--btn-colour);
+    background-color: color-mix(in srgb, var(--btn-colour) 18%, transparent);
+  }
+
+  .counter-btn:disabled {
+    border-color: var(--color-bg-border);
+    color: var(--color-text-muted);
+    background-color: transparent;
   }
 }

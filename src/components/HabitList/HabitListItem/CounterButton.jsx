@@ -10,10 +10,7 @@ const CounterButton = ({ onClick, disabled, colour, ariaLabel, children }) => (
                disabled:opacity-25 disabled:cursor-not-allowed
                transition-all duration-200"
     style={{
-      '--hover-colour':  colour,
-      borderColor:       disabled ? `${colour}40`              : 'var(--color-bg-border)',
-      color:             disabled ? colour                      : 'var(--color-text-muted)',
-      backgroundColor:   disabled ? `${colour}10`              : 'transparent',
+      '--btn-colour': colour,
     }}
   >
     {children}
