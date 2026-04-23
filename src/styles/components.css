@@ -77,17 +77,17 @@
     border-color: color-mix(in srgb, var(--btn-colour) 25%, transparent);
     color: color-mix(in srgb, var(--btn-colour) 70%, transparent);
     background-color: color-mix(in srgb, var(--btn-colour) 10%, transparent);
+  }
 
-    &::hover {
-      border-color: color-mix(in srgb, var(--btn-colour) 60%, transparent);
-      color: var(--btn-colour);
-      background-color: color-mix(in srgb, var(--btn-colour) 18%, transparent);
-    }
+  .counter-btn:hover {
+    border-color: color-mix(in srgb, var(--btn-colour) 60%, transparent);
+    color: var(--btn-colour);
+    background-color: color-mix(in srgb, var(--btn-colour) 18%, transparent);
+  }
 
-    &:disabled {
-      border-color: var(--color-bg-border);
-      color: var(--color-text-muted);
-      background-color: transparent;
-    }
+  .counter-btn:disabled {
+    border-color: var(--color-bg-border);
+    color: var(--color-text-muted);
+    background-color: transparent;
   }
 }
