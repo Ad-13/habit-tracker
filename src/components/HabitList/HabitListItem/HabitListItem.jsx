@@ -82,7 +82,7 @@ const HabitListItem = ({ habit, index, onIncrement, onDecrement, onDelete }) => 
           <CounterButton
             onClick={() => onIncrement(id)}
             disabled={isComplete}
-            colour="var(--color-neon-cyan)"
+            colour={colour}
             ariaLabel={`Increase ${name}`}
           >
             +
